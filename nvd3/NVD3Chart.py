@@ -244,6 +244,9 @@ class NVD3Chart:
         if 'color' in extra and extra['color']:
             data_keyvalue['color'] = extra['color']
 
+        if self.model == 'lineChart' and extra.get('area'):
+            data_keyvalue['area'] = 'true'
+
         if extra.get('date_format'):
             self.charttooltip_dateformat = extra['date_format']
 
